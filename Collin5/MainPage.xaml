@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="Collin5.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Collin5"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="MainFrame" Margin="65,10,0,0" Grid.Row="1" />
+
+
+        <RelativePanel Margin="0 0 0 0">
+            <Button Name="HamburgerMenu" FontFamily="Segoe MDL2 Assets" Content="&#xE169;" FontSize="36" Click="HamburgerMenu_Click"  RelativePanel.AlignLeftWithPanel="True"/>
+
+            <TextBlock Name="Title" Text="Money" FontSize="24" FontWeight="Bold" Margin="10 0 0 0" RelativePanel.RightOf="HamburgerMenu" RelativePanel.AlignVerticalCenterWithPanel="True"></TextBlock>
+
+
+        </RelativePanel>
+
+        <Border BorderThickness="3" Background="Gray" Grid.Row="2" BorderBrush="WhiteSmoke" >
+            <RelativePanel>
+                <TextBlock Name="ItemsTextBlock" Text="IPM" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="10 0 0 0" ></TextBlock>
+                <TextBlock Text="Version:" RelativePanel.LeftOf="VersionTextBlock" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="0 0 10 0"></TextBlock>
+                <TextBlock Name="VersionTextBlock" Text="1.0.0" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="0 0 10 0"></TextBlock>
+                <StackPanel RelativePanel.AlignHorizontalCenterWithPanel="True" >
+                    <TextBlock Text="Author" Margin="0,5,5,5" TextAlignment="Center"/>
+                    <TextBlock Text="Damian Faustryjak" TextAlignment="Center" Margin="0,5,5,5" />
+                </StackPanel>
+            </RelativePanel>
+
+
+
+
+
+        </Border>
+        <SplitView Name="menu" Grid.Row="1" DisplayMode="CompactOverlay" OpenPaneLength="200" CompactPaneLength="56" HorizontalAlignment="Left">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single" Name="IconsListBox">
+                    <ListBoxItem Tapped="Globe">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE909;" FontSize="24" Margin=" 5 0 0 0" />
+                            <TextBlock FontFamily="Arial" Text="Current" Margin=" 30 0 0 0" FontSize="20"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Tapped="History">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xEC25;" FontSize="24" Margin=" 5 0 0 0"/>
+                            <TextBlock FontFamily="Arial" Text="History" Margin=" 30 0 0 0" FontSize="20"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+        </SplitView>
+       </Grid>
+</Page>
