@@ -11,31 +11,14 @@ namespace Collin5.Modules
     {
         public static async Task <string> DownloadPageAsync(string URL)
         {
-            // ... Target page.
             string page = URL;
             byte[] result;
-
-            // ... Use HttpClient.
             using (HttpClient client = new HttpClient())
             using (HttpResponseMessage response = await client.GetAsync(page))
             using (HttpContent content = response.Content)
               
             {
-                // ... Read the string.
                 result = await content.ReadAsByteArrayAsync();
-
-                // ... Display the result.
-                //if (result != null &&
-                //result.Length >= 50)
-                //{
-                //    Console.WriteLine(result.Substring(0, 50) + "...");
-                //}
-
-               
-                
-               
-              
-
             }
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             Encoding iso = Encoding.GetEncoding("ISO-8859-2");

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Collin5.VModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,13 @@ namespace Collin5.Pages
     /// </summary>
     public sealed partial class History : Page
     {
+
+        public RecordingViewModel ViewModel { get; set; }
         public History()
         {
+          
             this.InitializeComponent();
+            ViewModel = new RecordingViewModel();
         }
     }
 }
